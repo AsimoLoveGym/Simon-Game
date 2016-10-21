@@ -94,7 +94,7 @@ main {
   /*border: solid 20px rgba(20, 20, 20, 1);*/
 }
 
-#center-block {
+#inner-circle-content {
   position: absolute;
   left: 105px;
   top: 110px;
@@ -109,4 +109,46 @@ main {
 
   border-radius: 125px;
 
+  /*font-size: 12px;*/
+
+}
+
+#control-panel-container {
+  display: flex;
+  justify-content: center;
+}
+
+#control-panel-container div {
+  display: flex;
+  /*width: 50px;*/
+  flex-flow: column;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+#switch-container {
+  display: flex;
+  justify-content: center;
+}
+
+#switch-box {
+  display: flex;
+  width: 40px;
+  height: 20px;
+  background-color: rgba(20, 20, 20, 1);
+  border-radius: 3px;
+  padding: 2px;
+  margin: 0 5px;
+}
+
+#off {
+  flex: 1;
+  background-color: red;
+  border-radius: 3px;
+}
+
+#on {
+  flex: 1;
+  background-color: red;
+  border-radius: 3px;
 }
