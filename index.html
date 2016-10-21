@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower|Pacifico|Wendy+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Orbitron" rel="stylesheet">
+
 
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -36,18 +38,26 @@
           </div>
 
           <div class="col-xs-6" id="inner-circle-content">
-            <h1>Simon<sup>&#174;</sup></h1>
+            <h1 id="main-title">Simon<sup id="title-sup">&#174;</sup></h1>
             <div id="control-panel-container">
               <div>
-                <p>01</p>
+                <!-- <div id="display-screen"> -->
+                  <p id="display-content">0 1</p>
+                <!-- </div> -->
                 <p>COUNT</p>
               </div>
               <div>
-                <button class="btn btn-default btn-danger" type="submit"></button>
+                <!-- <button class="btn btn-default btn-danger" type="submit"></button> -->
+                <div class="click-button" id="start-button">
+                </div>
                 <p>START</p>
               </div>
               <div>
-                <button class="btn btn-default btn-warning" type="submit"></button>
+                <div id="strict-light">
+                </div>
+                <!-- <button class="btn btn-default btn-warning" type="submit"></button> -->
+                <div class="click-button" id="strict-button">
+                </div>
                 <p>STRICT</p>
               </div>
             </div>
