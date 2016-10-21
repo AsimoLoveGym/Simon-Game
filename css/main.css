@@ -97,7 +97,7 @@ main {
 #inner-circle-content {
   position: absolute;
   left: 105px;
-  top: 110px;
+  top: 105px;
 
   background-color: #e1e8f0;
   border: solid 10px rgba(20, 20, 20, 1);
