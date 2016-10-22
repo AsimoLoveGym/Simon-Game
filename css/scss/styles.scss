@@ -5,10 +5,12 @@
 
 @import "bourbon/bourbon";
 
+
 @import 'base/grid';
 @import 'base/reset';
 @import 'base/typography';
 
+@import 'layout/main';
 @import 'layout/footer';
 @import 'layout/forms';
 @import 'layout/header';

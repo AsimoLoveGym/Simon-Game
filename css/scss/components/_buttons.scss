@@ -1,0 +1,61 @@
+/*  *************** Below is the buttons content *************** */
+.click-button {
+  width: 30px;
+  height: 30px;
+  border: solid 4px $primary-dark-background;
+  border-radius: 15px;
+}
+
+#start-button {
+  background-color: $secondary-red;
+  align-self: center;
+}
+
+#strict-light {
+  width: 8px;
+  height: 8px;
+  background-color: $secondary-red;
+  border: solid 1px $primary-dark-background;
+  border-radius: 4px;
+
+  align-self: center;
+  /*margin: 0 auto;*/
+
+  /*margin: 0;*/
+}
+
+#strict-button {
+  background-color: $secondary-yellow;
+  align-self: center;
+}
+
+
+
+#switch-container {
+  display: flex;
+  justify-content: center;
+}
+
+#switch-box {
+  display: flex;
+  /*justify-content: space-around;*/
+  width: 40px;
+  height: 20px;
+  background-color: $primary-dark-background;
+  border-radius: 3px;
+  padding: 2px;
+  margin: 0 5px;
+}
+
+#off {
+  flex: 1;
+  background-color: $secondary-red;
+  border-radius: 3px;
+  margin-right: 2px;
+}
+
+#on {
+  flex: 1;
+  background-color: $secondary-red;
+  border-radius: 3px;
+}
