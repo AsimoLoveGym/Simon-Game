@@ -120,30 +120,23 @@ main {
 }
 
 #control-panel-container {
-  display: flex;
-  justify-content: center;
+  @include display(flex);
+  @include justify-content(center);
 }
 
 #control-panel-container div {
-  display: flex;
-  /*width: 50px;*/
-  flex-flow: column;
-  justify-content: flex-end;
+  @include display(flex);
+  @include flex-flow(column);
+  @include justify-content(flex-end);
   margin: 5px;
 }
 
 #display-content {
-
   font-size: 18px;
-
   color: $secondary-red;
-
   font-family: 'Orbitron', sans-serif;
-
   padding: 3px 14px;
   background-color: $secondary-dark-red;
   border: solid 4px $primary-dark-background;
   border-radius: 10px;
-
-  /*margin-bottom: 0;*/
 }

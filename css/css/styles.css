@@ -88,14 +88,43 @@ main {
   font-size: 24px; }
 
 #control-panel-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center; }
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
 
 #control-panel-container div {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
-  /*width: 50px;*/
+  -webkit-flex-flow: column;
+  -moz-flex-flow: column;
   flex-flow: column;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
   justify-content: flex-end;
+  -ms-flex-pack: end;
   margin: 5px; }
 
 #display-content {
@@ -105,8 +134,7 @@ main {
   padding: 3px 14px;
   background-color: #570000;
   border: solid 4px #141414;
-  border-radius: 10px;
-  /*margin-bottom: 0;*/ }
+  border-radius: 10px; }
 
 /*  *************** Below is the buttons content *************** */
 .click-button {
@@ -117,7 +145,10 @@ main {
 
 #start-button {
   background-color: red;
-  align-self: center; }
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center; }
 
 #strict-light {
   width: 8px;
@@ -125,19 +156,43 @@ main {
   background-color: red;
   border: solid 1px #141414;
   border-radius: 4px;
+  -webkit-align-self: center;
+  -moz-align-self: center;
   align-self: center;
-  /*margin: 0 auto;*/
-  /*margin: 0;*/ }
+  -ms-flex-item-align: center; }
 
 #strict-button {
   background-color: yellow;
-  align-self: center; }
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center; }
 
 #switch-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center; }
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
 
 #switch-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
   /*justify-content: space-around;*/
   width: 40px;
@@ -148,12 +203,24 @@ main {
   margin: 0 5px; }
 
 #off {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   background-color: red;
   border-radius: 3px;
   margin-right: 2px; }
 
 #on {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   background-color: red;
   border-radius: 3px; }
