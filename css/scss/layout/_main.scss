@@ -11,6 +11,22 @@ main {
   margin-bottom: 1em;
 }
 
+@include keyframes(identifier) {
+  from {
+    @include transform(rotate(0) scale(0.5));
+    left: 120%;
+  }
+
+  50% {
+    @include transform(rotate(-720deg) scale(0.5));
+    left: 0;
+  }
+
+  to {
+    @include transform(rotate(0) scale(1));
+  }
+}
+
 #game-body {
   position: relative;
   width: $main-body-width;
@@ -20,10 +36,16 @@ main {
   margin-bottom: 2em;
   /*box-shadow: 4px 0 5px gray, 0 4px 5px gray;*/
   /*padding: 20px;*/
+
+  @include animation(identifier 3s);
 }
 
 #green-block {
   background-color: $primary-dark-green;
+
+  // background-color: $primary-bright-green;
+  // box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
+
   width: $block-width;
   height: $block-height;
 
@@ -35,10 +57,20 @@ main {
   border-color: $primary-dark-background;
   border-width: $singe-edge-margin $common-edge-margin $common-edge-margin $singe-edge-margin;
   /*border: solid 20px rgba(20, 20, 20, 1);*/
+
+  @include transition(all .5s ease-in-out);
+}
+
+#green-block:active {
+  background-color: $primary-bright-green;
+  box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
 }
 
 #red-block {
   background-color: $primary-dark-red;
+
+  // background-color: $primary-bright-red;
+  // box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
 
   width: $block-width;
   height: $block-height;
@@ -52,10 +84,20 @@ main {
   border-width: $singe-edge-margin $singe-edge-margin $common-edge-margin $common-edge-margin;
 
   /*border: solid 20px rgba(20, 20, 20, 1);*/
+
+  @include transition(all .5s ease-in-out);
+}
+
+#red-block:active {
+  background-color: $primary-bright-red;
+  box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
 }
 
 #yellow-block {
   background-color: $primary-dark-yellow;
+
+  // background-color: $primary-bright-yellow;
+  // box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
 
   width: $block-width;
   height: $block-height;
@@ -69,10 +111,20 @@ main {
   border-width: $common-edge-margin $common-edge-margin $singe-edge-margin $singe-edge-margin;
 
   /*border: solid 20px rgba(20, 20, 20, 1);*/
+
+  @include transition(all .5s ease-in-out);
+}
+
+#yellow-block:active {
+  background-color: $primary-bright-yellow;
+  box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
 }
 
 #blue-block {
   background-color: $primary-dark-blue;
+
+  // background-color: $primary-bright-blue;
+  // box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
 
   width: $block-width;
   height: $block-height;
@@ -86,6 +138,13 @@ main {
   border-width: $common-edge-margin $singe-edge-margin $singe-edge-margin $common-edge-margin;
 
   /*border: solid 20px rgba(20, 20, 20, 1);*/
+
+  @include transition(all .5s ease-in-out);
+}
+
+#blue-block:active {
+  background-color: $primary-bright-blue;
+  box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
 }
 
 #inner-circle-content {

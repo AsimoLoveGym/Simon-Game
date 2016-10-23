@@ -15,12 +15,17 @@
 #strict-light {
   width: 8px;
   height: 8px;
-  background-color: $secondary-red;
+  background-color: $primary-dark-red;
+  // background-color: $secondary-red;
   border: solid 1px $primary-dark-background;
   border-radius: 4px;
 
   @include align-self(center);
   // align-self: center;
+}
+
+#strict-light {
+  // background-color: $secondary-red;
 }
 
 #strict-button {
@@ -29,7 +34,9 @@
   // align-self: center;
 }
 
-
+.click-button:active {
+  @include transform(translate(1px,2px));
+}
 
 #switch-container {
   @include display(flex);
@@ -48,14 +55,28 @@
 }
 
 #off {
-  @include flex(1);
+  width: 50%;
+  height: 100%;
+  // @include flex(1);
   background-color: $secondary-red;
   border-radius: 3px;
   margin-right: 2px;
+
+  @include transition(all .5s);
 }
 
-#on {
-  @include flex(1);
+#off:hover {
+  width: 50%;
+  height: 100%;
+  // @include flex(1);
   background-color: $secondary-red;
   border-radius: 3px;
+  margin-right: 2px;
+  @include transform(translateX(20px));
 }
+
+// #on {
+//   @include flex(1);
+//   background-color: $secondary-red;
+//   border-radius: 3px;
+// }
