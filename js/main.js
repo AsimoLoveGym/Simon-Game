@@ -16,6 +16,7 @@ var simon = function() {
   var nextMove = Math.floor(Math.random() * 4);
   gamePattern.push(nextMove);
   playEntirePattern();
+
 }
 
 var lightUpAndSoundPlay = function(lightNum) {
@@ -38,14 +39,6 @@ var lightUpAndSoundPlay = function(lightNum) {
       }, 1000);
       break;
     case 2:
-      console.log("Blue should light upp");
-      $("#blue-block").addClass("blue-light-up");
-      blue.play();
-      timeOut = setTimeout(function(){
-        $("#blue-block").removeClass("blue-light-up", 400);
-      }, 1000);
-      break;
-    case 3:
       console.log("Yellow should light upp");
       $("#yellow-block").addClass("yellow-light-up");
       yellow.play();
@@ -53,25 +46,58 @@ var lightUpAndSoundPlay = function(lightNum) {
         $("#yellow-block").removeClass("yellow-light-up", 400);
       }, 1000);
       break;
+    case 3:
+      console.log("Blue should light upp");
+      $("#blue-block").addClass("blue-light-up");
+      blue.play();
+      timeOut = setTimeout(function(){
+        $("#blue-block").removeClass("blue-light-up", 400);
+      }, 1000);
+      break;
   }
 }
 
 $(document).ready(function(){
   $(".light-block").click(function(event){
-    console.log(event);
-    // may have bug here
-    var clickedBlock = event.currentTarget.data();
+    // console.log(event);
+    var clickedBlock = event.currentTarget.id;
+    // console.log(clickedBlock);
+    var clickedBlockNum = -1;
 
-    lightUpAndSoundPlay(clickedBlock);
-    if(clickedBlock === expectClickIndex) {
-      if(expectClickIndex === gamePattern.length) {
+    switch (clickedBlock) {
+      case "green-block":
+        clickedBlockNum = 0;
+        break;
+      case "red-block":
+        clickedBlockNum = 1;
+        break;
+      case "yellow-block":
+        clickedBlockNum = 2;
+        break;
+      case "blue-block":
+        clickedBlockNum = 3;
+        break;
+    }
+
+    lightUpAndSoundPlay(clickedBlockNum);
+
+    console.log("clickedBlockNum",clickedBlockNum);
+    console.log("gamePattern[expectClickIndex]",gamePattern[expectClickIndex]);
+
+    if(clickedBlockNum === gamePattern[expectClickIndex]) {
+      console.log("Correct");
+      console.log("expectClickIndex",expectClickIndex);
+      console.log("gamePattern.length-1",gamePattern.length-1);
+      if(expectClickIndex === (gamePattern.length-1)) {
         clickingFlag = false;
+        expectClickIndex = 0;
         $(".light-block").removeClass("activated");
         simon();
       } else {
         expectClickIndex ++;
       }
     } else {
+      console.log("Wrong");
       error.play();
       clickingFlag = false;
       $(".light-block").removeClass("activated");
@@ -81,6 +107,7 @@ $(document).ready(function(){
 });
 
 var playEntirePattern = function(){
+  console.log("gamePattern: ",gamePattern);
   var playTime = 0;
   gamePattern.forEach(function(item, index, array){
     timeOut = setTimeout(function(){
@@ -90,9 +117,9 @@ var playEntirePattern = function(){
         timeOut = setTimeout(function(){
           clickingFlag = true;
           $(".light-block").addClass("activated");
-        }, 1000);
+        }, array.length * 1000);
       }
-    }, 1000)
+    }, (index+1)*1000)
   })
 }
 
