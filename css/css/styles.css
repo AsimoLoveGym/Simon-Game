@@ -60,6 +60,9 @@ main {
   -moz-animation: identifier 3s;
   animation: identifier 3s; }
 
+.light-block[class="activated"] {
+  cursor: pointer; }
+
 #green-block {
   background-color: green;
   width: 230px;
@@ -76,6 +79,10 @@ main {
   transition: all 0.5s ease-in-out; }
 
 #green-block:active {
+  background-color: #77f820;
+  box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
+
+#green-block[class="light-up"] {
   background-color: #77f820;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
@@ -98,6 +105,10 @@ main {
   background-color: red;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
+#red-block[class="light-up"] {
+  background-color: red;
+  box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
+
 #yellow-block {
   background-color: #857300;
   width: 230px;
@@ -117,6 +128,10 @@ main {
   background-color: yellow;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
+#yellow-block[class="light-up"] {
+  background-color: yellow;
+  box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
+
 #blue-block {
   background-color: #004585;
   width: 230px;
@@ -133,6 +148,10 @@ main {
   transition: all 0.5s ease-in-out; }
 
 #blue-block:active {
+  background-color: blue;
+  box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
+
+#blue-block[class="light-up"] {
   background-color: blue;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
