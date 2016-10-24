@@ -19,33 +19,38 @@ var simon = function() {
 }
 
 var lightUpAndSoundPlay = function(lightNum) {
+  console.log(lightNum);
   switch (lightNum) {
     case 0:
-      $("green-block").addClass("light-up");
+      console.log("Green should light upp");
+      $("#green-block").addClass("green-light-up");
       green.play();
       timeOut = setTimeout(function(){
-        $("green-block").removeClass("light-up", 400);
+        $("#green-block").removeClass("green-light-up", 400);
       }, 1000);
       break;
     case 1:
-      $("red-block").addClass("light-up");
+    console.log("Red should light upp");
+      $("#red-block").addClass("red-light-up");
       red.play();
       timeOut = setTimeout(function(){
-        $("red-block").removeClass("light-up", 400);
+        $("#red-block").removeClass("red-light-up", 400);
       }, 1000);
       break;
     case 2:
-      $("blue-block").addClass("light-up");
+      console.log("Blue should light upp");
+      $("#blue-block").addClass("blue-light-up");
       blue.play();
       timeOut = setTimeout(function(){
-        $("blue-block").removeClass("light-up", 400);
+        $("#blue-block").removeClass("blue-light-up", 400);
       }, 1000);
       break;
     case 3:
-      $("yellow-block").addClass("light-up");
+      console.log("Yellow should light upp");
+      $("#yellow-block").addClass("yellow-light-up");
       yellow.play();
       timeOut = setTimeout(function(){
-        $("yellow-block").removeClass("light-up", 400);
+        $("#yellow-block").removeClass("yellow-light-up", 400);
       }, 1000);
       break;
   }

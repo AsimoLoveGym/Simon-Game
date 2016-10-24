@@ -82,7 +82,7 @@ main {
   background-color: #77f820;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
-#green-block[class="light-up"] {
+#game-body .green-light-up {
   background-color: #77f820;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
@@ -105,7 +105,7 @@ main {
   background-color: red;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
-#red-block[class="light-up"] {
+#game-body .red-light-up {
   background-color: red;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
@@ -128,7 +128,7 @@ main {
   background-color: yellow;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
-#yellow-block[class="light-up"] {
+#game-body .yellow-light-up {
   background-color: yellow;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
@@ -151,7 +151,7 @@ main {
   background-color: blue;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
-#blue-block[class="light-up"] {
+#game-body .blue-light-up {
   background-color: blue;
   box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8); }
 
