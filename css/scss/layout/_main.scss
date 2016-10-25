@@ -40,7 +40,8 @@ main {
   @include animation(identifier 3s);
 }
 
-.light-block[class="activated"] {
+// .light-block[class="activated"] {
+.activated {
   cursor: pointer;
 }
 

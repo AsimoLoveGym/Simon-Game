@@ -60,7 +60,7 @@ main {
   -moz-animation: identifier 3s;
   animation: identifier 3s; }
 
-.light-block[class="activated"] {
+.activated {
   cursor: pointer; }
 
 #green-block {
