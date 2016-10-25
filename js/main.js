@@ -12,6 +12,7 @@ var red = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
 var blue = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
 var yellow = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
 var error = new Audio("http://soundbible.com/mp3/Kick-SoundBible.com-1331196005.mp3");
+var youWin = new Audio("http://soundbible.com/mp3/SMALL_CROWD_APPLAUSE-Yannick_Lemieux-1268806408.mp3");
 
 var simon = function() {
   level ++;
@@ -147,14 +148,25 @@ $(document).ready(function(){
           // console.log("Correct");
           // console.log("expectClickIndex",expectClickIndex);
           // console.log("gamePattern.length-1",gamePattern.length-1);
-          if(expectClickIndex === (gamePattern.length-1)) {
+
+          // YOU WIN, after achieve 20 levels
+          if(expectClickIndex === 19) {
+            timeOuts.push(setTimeout(function(){
+              // simon();
+              winning();
+            },2000));
+          }
+
+          if(expectClickIndex === (gamePattern.length-1) && expectClickIndex < 19) {
             clickingFlag = false;
             expectClickIndex = 0;
             $(".light-block").removeClass("activated");
             simon();
+
           } else {
             expectClickIndex ++;
           }
+
         } else {
           // console.log("Wrong");
           error.play();
@@ -215,6 +227,26 @@ var display = function() {
   // })
 }
 
+var winning = function() {
+  youWin.play();
+  $("#display-content").html("! ! !");
+  var intervalLight = setInterval(function(){
+    $("#green-block").addClass("green-light-up");
+    $("#red-block").addClass("red-light-up");
+    $("#yellow-block").addClass("yellow-light-up");
+    $("#blue-block").addClass("blue-light-up");
+    timeOuts.push(setTimeout(function(){
+      $("#green-block").removeClass("green-light-up", 400);
+      $("#red-block").removeClass("red-light-up", 400);
+      $("#yellow-block").removeClass("yellow-light-up", 400);
+      $("#blue-block").removeClass("blue-light-up", 400);
+    }, 500));
+  }, 1500);
+  timeOuts.push(setTimeout(function(){
+    clearInterval(intervalLight);
+  }, 6000));
+}
+
 var reset = function(){
   gamePattern = [];
   level = 0;
@@ -235,3 +267,8 @@ var reset = function(){
 // timeOut = setTimeout(function(){
 //   simon();
 // }, 3000);
+
+// for winning display test
+// timeOuts.push(setTimeout(function(){
+//   winning();
+// },3000));
