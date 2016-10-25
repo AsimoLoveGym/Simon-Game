@@ -24,8 +24,8 @@
   // align-self: center;
 }
 
-#strict-light {
-  // background-color: $secondary-red;
+#strict-box .strict-mode-on {
+  background-color: $secondary-red;
 }
 
 #strict-button {
@@ -62,17 +62,19 @@
   border-radius: 3px;
   margin-right: 2px;
 
+  cursor: pointer;
+
   @include transition(all .5s);
 }
 
-#off:hover {
+#switch-box .powerOn {
   width: 50%;
   height: 100%;
   // @include flex(1);
   background-color: $secondary-red;
   border-radius: 3px;
   margin-right: 2px;
-  @include transform(translateX(20px));
+  @include transform(translateX(18px));
 }
 
 // #on {
