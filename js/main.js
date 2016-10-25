@@ -6,7 +6,7 @@ var strictMode = false;
 var clickingFlag = false;
 var expectClickIndex = 0;
 
-var timeOut = 0;
+var timeOuts = [];
 var green = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 var red = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
 var blue = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
@@ -18,9 +18,10 @@ var simon = function() {
   var nextMove = Math.floor(Math.random() * 4);
   gamePattern.push(nextMove);
   playEntirePattern();
-  timeOut = setTimeout(function(){
+
+  timeOuts.push(setTimeout(function(){
     display();
-  },1000);
+  },1000));
 }
 
 var lightUpAndSoundPlay = function(lightNum) {
@@ -30,33 +31,33 @@ var lightUpAndSoundPlay = function(lightNum) {
       // console.log("Green should light upp");
       $("#green-block").addClass("green-light-up");
       green.play();
-      timeOut = setTimeout(function(){
+      timeOuts.push(setTimeout(function(){
         $("#green-block").removeClass("green-light-up", 400);
-      }, 500);
+      }, 500));
       break;
     case 1:
     // console.log("Red should light upp");
       $("#red-block").addClass("red-light-up");
       red.play();
-      timeOut = setTimeout(function(){
+      timeOuts.push(setTimeout(function(){
         $("#red-block").removeClass("red-light-up", 400);
-      }, 500);
+      }, 500));
       break;
     case 2:
       // console.log("Yellow should light upp");
       $("#yellow-block").addClass("yellow-light-up");
       yellow.play();
-      timeOut = setTimeout(function(){
+      timeOuts.push(setTimeout(function(){
         $("#yellow-block").removeClass("yellow-light-up", 400);
-      }, 500);
+      }, 500));
       break;
     case 3:
       // console.log("Blue should light upp");
       $("#blue-block").addClass("blue-light-up");
       blue.play();
-      timeOut = setTimeout(function(){
+      timeOuts.push(setTimeout(function(){
         $("#blue-block").removeClass("blue-light-up", 400);
-      }, 500);
+      }, 500));
       break;
   }
 }
@@ -72,6 +73,7 @@ $(document).ready(function(){
       powerOff = true;
       $("#display-content").html("");
       reset();
+      console.log();
     }
   });
 
@@ -83,21 +85,21 @@ $(document).ready(function(){
         clickingFlag = false;
         expectClickIndex = 0;
 
-        timeOut = setTimeout(function(){
+        timeOuts.push(setTimeout(function(){
           $("#display-content").html("");
-        },200);
-        timeOut = setTimeout(function(){
+        },200));
+        timeOuts.push(setTimeout(function(){
           $("#display-content").html("- -");
-        },300);
-        timeOut = setTimeout(function(){
+        },300));
+        timeOuts.push(setTimeout(function(){
           $("#display-content").html("");
-        },400);
-        timeOut = setTimeout(function(){
+        },400));
+        timeOuts.push(setTimeout(function(){
           $("#display-content").html("- -");
-        },600);
-        timeOut = setTimeout(function(){
+        },600));
+        timeOuts.push(setTimeout(function(){
           simon();
-        },800);
+        },800));
 
       }
     });
@@ -163,13 +165,13 @@ $(document).ready(function(){
             level = 0;
             clickingFlag = false;
             expectClickIndex = 0;
-            timeOut = setTimeout(function(){
+            timeOuts.push(setTimeout(function(){
               simon();
-            },2000);
+            },2000));
           } else {
-            timeOut = setTimeout(function(){
+            timeOuts.push(setTimeout(function(){
               display();
-            },1000);
+            },1000));
             clickingFlag = false;
             expectClickIndex = 0;
             $(".light-block").removeClass("activated");
@@ -185,17 +187,17 @@ var playEntirePattern = function(){
   // console.log("gamePattern: ",gamePattern);
   var playTime = 0;
   gamePattern.forEach(function(item, index, array){
-    timeOut = setTimeout(function(){
-      lightUpAndSoundPlay(item);
-      playTime ++;
-      if(playTime === array.length){
-        timeOut = setTimeout(function(){
-          clickingFlag = true;
-          $(".light-block").addClass("activated");
-        }, 1500);
-      }
-    }, (index+1)*1500);
-  })
+      timeOuts.push(setTimeout(function(){
+        lightUpAndSoundPlay(item);
+        playTime ++;
+        if(playTime === array.length){
+          timeOut = setTimeout(function(){
+            clickingFlag = true;
+            $(".light-block").addClass("activated");
+          }, 1500);
+        }
+      }, (index+1)*1500));
+  });
 }
 
 var display = function() {
@@ -214,12 +216,19 @@ var display = function() {
 }
 
 var reset = function(){
-  var gamePattern = [];
-  var level = 0;
-  var powerOff = true;
-  var strictMode = false;
-  var clickingFlag = false;
-  var expectClickIndex = 0;
+  gamePattern = [];
+  level = 0;
+  powerOff = true;
+  strictMode = false;
+  clickingFlag = false;
+  $(".light-block").removeClass("activated");
+  expectClickIndex = 0;
+
+  for (var i = 0; i < timeOuts.length; i++) {
+    clearTimeout(timeOuts[i]);
+  }
+
+  timeOuts = [];
 }
 
 // for initial test without Start button

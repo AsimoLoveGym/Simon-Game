@@ -215,16 +215,22 @@ main {
   margin: 5px;
 }
 
-#display-content {
-  // width: 30px;
+#display-screen {
+  width: 70px;
+  height: 50px;
   text-align: center;
-  font-size: 16px;
-  color: $secondary-red;
-  font-family: 'Orbitron', sans-serif;
-  padding: 3px 14px;
   background-color: $secondary-dark-red;
   border: solid 4px $primary-dark-background;
   border-radius: 10px;
+}
+
+#display-content {
+  // width: 30px;
+  // position: relative;
+  // top: 10px;
+  font-size: 16px;
+  color: $secondary-red;
+  font-family: 'Orbitron', sans-serif;
 
   @include transition(all .5s ease-in-out);
 }

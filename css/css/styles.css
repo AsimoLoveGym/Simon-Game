@@ -216,15 +216,18 @@ main {
   -ms-flex-pack: end;
   margin: 5px; }
 
-#display-content {
+#display-screen {
+  width: 70px;
+  height: 50px;
   text-align: center;
+  background-color: #570000;
+  border: solid 4px #4d4d4d;
+  border-radius: 10px; }
+
+#display-content {
   font-size: 16px;
   color: red;
   font-family: 'Orbitron', sans-serif;
-  padding: 3px 14px;
-  background-color: #570000;
-  border: solid 4px #4d4d4d;
-  border-radius: 10px;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
