@@ -34,35 +34,21 @@ main {
   background-color: $primary-dark-background;
   border-radius: $main-body-border-radius;
   margin-bottom: 2em;
-  /*box-shadow: 4px 0 5px gray, 0 4px 5px gray;*/
-  /*padding: 20px;*/
-
   @include animation(identifier 3s);
 }
 
-// .light-block[class="activated"] {
 .activated {
   cursor: pointer;
 }
 
 #green-block {
   background-color: $primary-dark-green;
-
-  // background-color: $primary-bright-green;
-  // box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
-
   width: $block-width;
   height: $block-height;
-
-  /*margin-right: 10px;
-  margin-bottom: 10px;*/
-
   border-radius: $block-body-border-radius 0 0 0;
   border-style: solid;
   border-color: $primary-dark-background;
   border-width: $singe-edge-margin $common-edge-margin $common-edge-margin $singe-edge-margin;
-  /*border: solid 20px rgba(20, 20, 20, 1);*/
-
   @include transition(all .5s ease-in-out);
 }
 
@@ -78,23 +64,12 @@ main {
 
 #red-block {
   background-color: $primary-dark-red;
-
-  // background-color: $primary-bright-red;
-  // box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
-
   width: $block-width;
   height: $block-height;
-
-  /*margin-left: 10px;
-  margin-bottom: 10px;*/
-
   border-radius: 0 $block-body-border-radius 0 0;
   border-style: solid;
   border-color: $primary-dark-background;
   border-width: $singe-edge-margin $singe-edge-margin $common-edge-margin $common-edge-margin;
-
-  /*border: solid 20px rgba(20, 20, 20, 1);*/
-
   @include transition(all .5s ease-in-out);
 }
 
@@ -110,23 +85,12 @@ main {
 
 #yellow-block {
   background-color: $primary-dark-yellow;
-
-  // background-color: $primary-bright-yellow;
-  // box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
-
   width: $block-width;
   height: $block-height;
-
-  /*margin-right: 10px;
-  margin-top: 10px;*/
-
   border-radius: 0 0 0 $block-body-border-radius;
   border-style: solid;
   border-color: $primary-dark-background;
   border-width: $common-edge-margin $common-edge-margin $singe-edge-margin $singe-edge-margin;
-
-  /*border: solid 20px rgba(20, 20, 20, 1);*/
-
   @include transition(all .5s ease-in-out);
 }
 
@@ -142,23 +106,12 @@ main {
 
 #blue-block {
   background-color: $primary-dark-blue;
-
-  // background-color: $primary-bright-blue;
-  // box-shadow: inset 0 0 8px 8px rgba(77, 77, 77, 0.8);
-
   width: $block-width;
   height: $block-height;
-
-  /*margin-left: 10px;
-  margin-top: 10px;*/
-
   border-radius: 0 0 $block-body-border-radius 0;
   border-style: solid;
   border-color: $primary-dark-background;
   border-width: $common-edge-margin $singe-edge-margin $singe-edge-margin $common-edge-margin;
-
-  /*border: solid 20px rgba(20, 20, 20, 1);*/
-
   @include transition(all .5s ease-in-out);
 }
 
@@ -176,25 +129,16 @@ main {
   position: absolute;
   left: $inner-shift-x;
   top: $inner-shift-y;
-
   background-color: $primary-light;
   border: solid $common-edge-margin $primary-dark-background;
-
-  /*background-color: #e1e8f0;*/
-
   width: $inner-circle-length;
   height: $inner-circle-length;
-
   border-radius: $inner-circle-radius;
-
-  /*font-size: 12px;*/
-
 }
 
 #main-title {
   font-size: 60px;
   font-family: 'Wendy One', sans-serif;
-
   margin-bottom: -10px;
   margin-top: 40px;
 }
@@ -225,12 +169,8 @@ main {
 }
 
 #display-content {
-  // width: 30px;
-  // position: relative;
-  // top: 10px;
   font-size: 16px;
   color: $secondary-red;
   font-family: 'Orbitron', sans-serif;
-
   @include transition(all .5s ease-in-out);
 }

@@ -6,9 +6,10 @@ var strictMode = false;
 var clickingFlag = false;
 var expectClickIndex = 0;
 var tempoPattern = 1;
-
 var timeOuts = [];
+var difficulty = 19;
 
+// Audio files for game voice
 var green = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 var red = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
 var blue = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
@@ -16,6 +17,9 @@ var yellow = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
 var error = new Audio("http://soundbible.com/mp3/Kick-SoundBible.com-1331196005.mp3");
 var youWin = new Audio("http://soundbible.com/mp3/SMALL_CROWD_APPLAUSE-Yannick_Lemieux-1268806408.mp3");
 
+
+// ********** Simon Function ************
+// Simon() will add one extra step to previous pattern
 var simon = function() {
   level ++;
   // for tempo control
@@ -37,7 +41,9 @@ var simon = function() {
     display();
   },1000));
 }
+// ********** End of Simon Function ************
 
+// ********** lightUpAndSoundPlay Function ************
 var lightUpAndSoundPlay = function(lightNum) {
   // console.log(lightNum);
   switch (lightNum) {
@@ -75,8 +81,30 @@ var lightUpAndSoundPlay = function(lightNum) {
       break;
   }
 }
+// ********** End of lightUpAndSoundPlay Function ************
 
 $(document).ready(function(){
+// For diccifulty choose
+  $(".difficulty-choose").click(function(event){
+    var difficultySet = event.currentTarget.id;
+    switch (difficultySet) {
+      case "easy":
+        difficulty = 9 - 1;
+        $("#dropdownMenu1").html("Easy (9 steps)");
+        break;
+      case "medium":
+        difficulty = 15 - 1;
+        $("#dropdownMenu1").html("Medium (15 steps)");
+        break;
+      case "hard":
+        difficulty = 20 - 1;
+        $("#dropdownMenu1").html("Hard (20 steps)");
+        break;
+    }
+    // console.log(difficulty);
+  });
+
+// switch on or off control
   $("#off").click(function(event){
     if(powerOff) {
       $("#off").addClass("powerOn");
@@ -92,29 +120,23 @@ $(document).ready(function(){
 
 
     $("#start-button").click(function(event){
-      // console.log("In start button function 1");
-      if(!powerOff) {
-        // console.log("In start button function 2");
-
-        // if power off during lights up, turn off lights
+        if(!powerOff) {
+          // if restart during lights up, turn off lights
         $("#green-block").removeClass("green-light-up");
         $("#red-block").removeClass("red-light-up");
         $("#yellow-block").removeClass("yellow-light-up");
         $("#blue-block").removeClass("blue-light-up");
 
+        // clear all the code in setTimeout and reset all the value
         for (var i = 0; i < timeOuts.length; i++) {
           clearTimeout(timeOuts[i]);
-          // console.log("clearing timeout!");
         }
-
         gamePattern = [];
         level = 0;
         clickingFlag = false;
         expectClickIndex = 0;
         tempoPattern = 1;
         timeOuts = [];
-
-
 
         // Display animation
         timeOuts.push(setTimeout(function(){
@@ -132,9 +154,8 @@ $(document).ready(function(){
         timeOuts.push(setTimeout(function(){
           simon();
         },800));
-
       }
-    });
+    }); // End of start-button control
 
     $("#strict-button").click(function(event){
       if(!powerOff) {
@@ -150,11 +171,8 @@ $(document).ready(function(){
 
     $(".light-block").click(function(event){
       if(clickingFlag) {
-        // console.log(event);
         var clickedBlock = event.currentTarget.id;
-        // console.log(clickedBlock);
         var clickedBlockNum = -1;
-
         switch (clickedBlock) {
           case "green-block":
             clickedBlockNum = 0;
@@ -174,35 +192,32 @@ $(document).ready(function(){
 
         // console.log("clickedBlockNum",clickedBlockNum);
         // console.log("gamePattern[expectClickIndex]",gamePattern[expectClickIndex]);
-
         if(clickedBlockNum === gamePattern[expectClickIndex]) {
-          // console.log("Correct");
-          // console.log("expectClickIndex",expectClickIndex);
+            // console.log("expectClickIndex",expectClickIndex);
           // console.log("gamePattern.length-1",gamePattern.length-1);
 
-          // YOU WIN, after achieve 20 levels
-          if(expectClickIndex === 19) {
+          // YOU WIN, after achieve 9,15 or 20 levels, depends on the difficulty you choose
+          if(expectClickIndex === difficulty) {
             timeOuts.push(setTimeout(function(){
               // simon();
               winning();
             },2000));
           }
 
-          if(expectClickIndex === (gamePattern.length-1) && expectClickIndex < 19) {
+          // If you finish one round
+          if(expectClickIndex === (gamePattern.length-1) && expectClickIndex < difficulty) {
             clickingFlag = false;
             expectClickIndex = 0;
             $(".light-block").removeClass("activated");
             simon();
-
           } else {
             expectClickIndex ++;
           }
 
         } else {
-          // console.log("Wrong");
+          // you clicked the wrong pattern
           error.play();
           $("#display-content").html("! ! !");
-
           if(strictMode) {
             gamePattern = [];
             level = 0;
@@ -221,7 +236,7 @@ $(document).ready(function(){
             playEntirePattern();
           }
         }
-      }
+      } // End of clickingFlag "if" control
     }); // End of $(".light-block").click
 
 });
@@ -246,6 +261,7 @@ var playEntirePattern = function(){
   //       break;
   //   }
   // }
+
   var playTime = 0;
   gamePattern.forEach(function(item, index, array){
       timeOuts.push(setTimeout(function(){
@@ -268,9 +284,9 @@ var display = function() {
   } else {
     displayLevel = Math.floor(level/10) + " " + (level - Math.floor(level/10)*10) + " ";
   }
-  // console.log("level: ",level);
   // console.log("displayLevel: ",displayLevel);
   $("#display-content").html(displayLevel);
+  // Try to use jQuery animate() for display animation, doesn't work
   // $("#display-content").animate({
   //   html(displayLevel);
   // })
@@ -278,6 +294,8 @@ var display = function() {
 
 var winning = function() {
   youWin.play();
+
+  // display animations
   $("#display-content").html("! ! !");
   var intervalLight = setInterval(function(){
     $("#green-block").addClass("green-light-up");

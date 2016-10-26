@@ -8,15 +8,10 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css"/>
-
     <link rel="stylesheet" href="css/css/styles.css">
-    <!-- <link rel="stylesheet" href="css/main.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower|Pacifico|Wendy+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Orbitron" rel="stylesheet">
-
-
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
@@ -27,8 +22,20 @@
 
       <div clss="row">
 
+        <div class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Choose Difficulty
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="difficulty-choose" id="easy"><a href="#">Easy (9 steps)</a></li>
+            <li class="difficulty-choose" id="medium"><a href="#">Medium (15 steps)</a></li>
+            <li class="difficulty-choose" id="hard"><a href="#">Hard (20 steps)</a></li>
+          </ul>
+        </div>
+
         <div class="center-block text-center" id="game-body">
-          <!-- <h1 id="game-title">Simon Game</h1> -->
+
           <div class="col-xs-6 light-block" data-value="0" id="green-block">
           </div>
 
@@ -44,36 +51,35 @@
           <div class="col-xs-6" id="inner-circle-content">
             <h1 id="main-title">Simon<sup id="title-sup">&#174;</sup></h1>
             <div id="control-panel-container">
+
               <div>
                 <div id="display-screen">
                   <p id="display-content"></p>
                 </div>
                 <p>COUNT</p>
               </div>
+
               <div>
-                <!-- <button class="btn btn-default btn-danger" type="submit"></button> -->
                 <div class="click-button" id="start-button">
                 </div>
                 <p>START</p>
               </div>
+
               <div id="strict-box">
                 <div id="strict-light">
                 </div>
-                <!-- <button class="btn btn-default btn-warning" type="submit"></button> -->
                 <div class="click-button" id="strict-button">
                 </div>
                 <p>STRICT</p>
               </div>
-            </div>
 
+            </div>
 
             <div class="center-block text-center" id="switch-container">
               <span>OFF</span>
               <div id="switch-box">
                 <div id="off">
                 </div>
-                <!-- <div id="on">
-                </div> -->
               </div>
               <span>ON</span>
             </div>

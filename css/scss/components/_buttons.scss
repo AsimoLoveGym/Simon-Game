@@ -9,19 +9,15 @@
 #start-button {
   background-color: $secondary-red;
   @include align-self(center);
-  // align-self: center;
 }
 
 #strict-light {
   width: 8px;
   height: 8px;
   background-color: $primary-dark-red;
-  // background-color: $secondary-red;
   border: solid 1px $primary-dark-background;
   border-radius: 4px;
-
   @include align-self(center);
-  // align-self: center;
 }
 
 #strict-box .strict-mode-on {
@@ -31,7 +27,6 @@
 #strict-button {
   background-color: $secondary-yellow;
   @include align-self(center);
-  // align-self: center;
 }
 
 .click-button:active {
@@ -45,7 +40,6 @@
 
 #switch-box {
   @include display(flex);
-  /*justify-content: space-around;*/
   width: 40px;
   height: 20px;
   background-color: $primary-dark-background;
@@ -57,31 +51,21 @@
 #off {
   width: 50%;
   height: 100%;
-  // @include flex(1);
   background-color: $secondary-red;
   border-radius: 3px;
   margin-right: 2px;
-
   cursor: pointer;
-
   @include transition(all .5s);
 }
 
 #switch-box .powerOn {
   width: 50%;
   height: 100%;
-  // @include flex(1);
   background-color: $secondary-red;
   border-radius: 3px;
   margin-right: 2px;
   @include transform(translateX(18px));
 }
-
-// #on {
-//   @include flex(1);
-//   background-color: $secondary-red;
-//   border-radius: 3px;
-// }
 
 #dropdownMenu1 {
   position: absolute;

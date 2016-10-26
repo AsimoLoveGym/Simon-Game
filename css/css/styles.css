@@ -54,8 +54,6 @@ main {
   background-color: #4d4d4d;
   border-radius: 230px;
   margin-bottom: 2em;
-  /*box-shadow: 4px 0 5px gray, 0 4px 5px gray;*/
-  /*padding: 20px;*/
   -webkit-animation: identifier 3s;
   -moz-animation: identifier 3s;
   animation: identifier 3s; }
@@ -67,13 +65,10 @@ main {
   background-color: green;
   width: 230px;
   height: 230px;
-  /*margin-right: 10px;
-  margin-bottom: 10px;*/
   border-radius: 230px 0 0 0;
   border-style: solid;
   border-color: #4d4d4d;
   border-width: 20px 10px 10px 20px;
-  /*border: solid 20px rgba(20, 20, 20, 1);*/
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
@@ -90,13 +85,10 @@ main {
   background-color: #850000;
   width: 230px;
   height: 230px;
-  /*margin-left: 10px;
-  margin-bottom: 10px;*/
   border-radius: 0 230px 0 0;
   border-style: solid;
   border-color: #4d4d4d;
   border-width: 20px 20px 10px 10px;
-  /*border: solid 20px rgba(20, 20, 20, 1);*/
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
@@ -113,13 +105,10 @@ main {
   background-color: #857300;
   width: 230px;
   height: 230px;
-  /*margin-right: 10px;
-  margin-top: 10px;*/
   border-radius: 0 0 0 230px;
   border-style: solid;
   border-color: #4d4d4d;
   border-width: 10px 10px 20px 20px;
-  /*border: solid 20px rgba(20, 20, 20, 1);*/
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
@@ -136,13 +125,10 @@ main {
   background-color: #004585;
   width: 230px;
   height: 230px;
-  /*margin-left: 10px;
-  margin-top: 10px;*/
   border-radius: 0 0 230px 0;
   border-style: solid;
   border-color: #4d4d4d;
   border-width: 10px 20px 20px 10px;
-  /*border: solid 20px rgba(20, 20, 20, 1);*/
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
@@ -161,11 +147,9 @@ main {
   top: 105px;
   background-color: #e5e5e5;
   border: solid 10px #4d4d4d;
-  /*background-color: #e1e8f0;*/
   width: 250px;
   height: 250px;
-  border-radius: 125px;
-  /*font-size: 12px;*/ }
+  border-radius: 125px; }
 
 #main-title {
   font-size: 60px;
@@ -300,7 +284,6 @@ main {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  /*justify-content: space-around;*/
   width: 40px;
   height: 20px;
   background-color: #4d4d4d;
