@@ -20,19 +20,19 @@
   <body>
     <main class="container">
 
-      <div clss="row">
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Choose Difficulty
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li class="difficulty-choose" id="easy"><a href="#">Easy (9 steps)</a></li>
+          <li class="difficulty-choose" id="medium"><a href="#">Medium (15 steps)</a></li>
+          <li class="difficulty-choose" id="hard"><a href="#">Hard (20 steps)</a></li>
+        </ul>
+      </div>
 
-        <div class="dropdown">
-          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Choose Difficulty
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li class="difficulty-choose" id="easy"><a href="#">Easy (9 steps)</a></li>
-            <li class="difficulty-choose" id="medium"><a href="#">Medium (15 steps)</a></li>
-            <li class="difficulty-choose" id="hard"><a href="#">Hard (20 steps)</a></li>
-          </ul>
-        </div>
+      <div clss="row">
 
         <div class="center-block text-center" id="game-body">
 
