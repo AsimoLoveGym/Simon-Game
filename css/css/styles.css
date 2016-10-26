@@ -69,9 +69,9 @@ main {
   border-style: solid;
   border-color: #4d4d4d;
   border-width: 20px 10px 10px 20px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
 
 #green-block:active {
   background-color: #77f820;
@@ -89,9 +89,9 @@ main {
   border-style: solid;
   border-color: #4d4d4d;
   border-width: 20px 20px 10px 10px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
 
 #red-block:active {
   background-color: red;
@@ -109,9 +109,9 @@ main {
   border-style: solid;
   border-color: #4d4d4d;
   border-width: 10px 10px 20px 20px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
 
 #yellow-block:active {
   background-color: yellow;
@@ -129,9 +129,9 @@ main {
   border-style: solid;
   border-color: #4d4d4d;
   border-width: 10px 20px 20px 10px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
 
 #blue-block:active {
   background-color: blue;

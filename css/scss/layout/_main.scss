@@ -49,7 +49,7 @@ main {
   border-style: solid;
   border-color: $primary-dark-background;
   border-width: $singe-edge-margin $common-edge-margin $common-edge-margin $singe-edge-margin;
-  @include transition(all .5s ease-in-out);
+  @include transition(all .3s ease-in-out);
 }
 
 #green-block:active {
@@ -70,7 +70,7 @@ main {
   border-style: solid;
   border-color: $primary-dark-background;
   border-width: $singe-edge-margin $singe-edge-margin $common-edge-margin $common-edge-margin;
-  @include transition(all .5s ease-in-out);
+  @include transition(all .3s ease-in-out);
 }
 
 #red-block:active {
@@ -91,7 +91,7 @@ main {
   border-style: solid;
   border-color: $primary-dark-background;
   border-width: $common-edge-margin $common-edge-margin $singe-edge-margin $singe-edge-margin;
-  @include transition(all .5s ease-in-out);
+  @include transition(all .3s ease-in-out);
 }
 
 #yellow-block:active {
@@ -112,7 +112,7 @@ main {
   border-style: solid;
   border-color: $primary-dark-background;
   border-width: $common-edge-margin $singe-edge-margin $singe-edge-margin $common-edge-margin;
-  @include transition(all .5s ease-in-out);
+  @include transition(all .3s ease-in-out);
 }
 
 #blue-block:active {

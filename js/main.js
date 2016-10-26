@@ -24,10 +24,10 @@ var simon = function() {
   level ++;
   // for tempo control
   if(level >= 5 ) {
-    tempoPattern = 0.8;
+    tempoPattern = 0.9;
   }
   if(level >= 9 ) {
-    tempoPattern = 0.64;
+    tempoPattern = 0.7;
   }
   if(level >= 13 ) {
     tempoPattern = 0.5;
@@ -52,32 +52,32 @@ var lightUpAndSoundPlay = function(lightNum) {
       $("#green-block").addClass("green-light-up");
       green.play();
       timeOuts.push(setTimeout(function(){
-        $("#green-block").removeClass("green-light-up", 400*tempoPattern);
-      }, 500*tempoPattern));
+        $("#green-block").removeClass("green-light-up", 300*tempoPattern);
+      }, 300*tempoPattern));
       break;
     case 1:
     // console.log("Red should light upp");
       $("#red-block").addClass("red-light-up");
       red.play();
       timeOuts.push(setTimeout(function(){
-        $("#red-block").removeClass("red-light-up", 400*tempoPattern);
-      }, 500*tempoPattern));
+        $("#red-block").removeClass("red-light-up", 300*tempoPattern);
+      }, 300*tempoPattern));
       break;
     case 2:
       // console.log("Yellow should light upp");
       $("#yellow-block").addClass("yellow-light-up");
       yellow.play();
       timeOuts.push(setTimeout(function(){
-        $("#yellow-block").removeClass("yellow-light-up", 400*tempoPattern);
-      }, 500*tempoPattern));
+        $("#yellow-block").removeClass("yellow-light-up", 300*tempoPattern);
+      }, 300*tempoPattern));
       break;
     case 3:
       // console.log("Blue should light upp");
       $("#blue-block").addClass("blue-light-up");
       blue.play();
       timeOuts.push(setTimeout(function(){
-        $("#blue-block").removeClass("blue-light-up", 400*tempoPattern);
-      }, 500*tempoPattern));
+        $("#blue-block").removeClass("blue-light-up", 300*tempoPattern);
+      }, 300*tempoPattern));
       break;
   }
 }
@@ -271,9 +271,9 @@ var playEntirePattern = function(){
           timeOut = setTimeout(function(){
             clickingFlag = true;
             $(".light-block").addClass("activated");
-          }, 600+900*tempoPattern);
+          }, 400+600*tempoPattern);
         }
-      }, (index+1)*(600+900*tempoPattern) ));
+      }, (index+1)*(400+600*tempoPattern) ));
   });
 }
 
