@@ -5,8 +5,10 @@ var powerOff = true;
 var strictMode = false;
 var clickingFlag = false;
 var expectClickIndex = 0;
+var tempoPattern = 1;
 
 var timeOuts = [];
+
 var green = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 var red = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
 var blue = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
@@ -16,6 +18,17 @@ var youWin = new Audio("http://soundbible.com/mp3/SMALL_CROWD_APPLAUSE-Yannick_L
 
 var simon = function() {
   level ++;
+  // for tempo control
+  if(level >= 5 ) {
+    tempoPattern = 0.8;
+  }
+  if(level >= 9 ) {
+    tempoPattern = 0.64;
+  }
+  if(level >= 13 ) {
+    tempoPattern = 0.5;
+  }
+
   var nextMove = Math.floor(Math.random() * 4);
   gamePattern.push(nextMove);
   playEntirePattern();
@@ -33,32 +46,32 @@ var lightUpAndSoundPlay = function(lightNum) {
       $("#green-block").addClass("green-light-up");
       green.play();
       timeOuts.push(setTimeout(function(){
-        $("#green-block").removeClass("green-light-up", 400);
-      }, 500));
+        $("#green-block").removeClass("green-light-up", 400*tempoPattern);
+      }, 500*tempoPattern));
       break;
     case 1:
     // console.log("Red should light upp");
       $("#red-block").addClass("red-light-up");
       red.play();
       timeOuts.push(setTimeout(function(){
-        $("#red-block").removeClass("red-light-up", 400);
-      }, 500));
+        $("#red-block").removeClass("red-light-up", 400*tempoPattern);
+      }, 500*tempoPattern));
       break;
     case 2:
       // console.log("Yellow should light upp");
       $("#yellow-block").addClass("yellow-light-up");
       yellow.play();
       timeOuts.push(setTimeout(function(){
-        $("#yellow-block").removeClass("yellow-light-up", 400);
-      }, 500));
+        $("#yellow-block").removeClass("yellow-light-up", 400*tempoPattern);
+      }, 500*tempoPattern));
       break;
     case 3:
       // console.log("Blue should light upp");
       $("#blue-block").addClass("blue-light-up");
       blue.play();
       timeOuts.push(setTimeout(function(){
-        $("#blue-block").removeClass("blue-light-up", 400);
-      }, 500));
+        $("#blue-block").removeClass("blue-light-up", 400*tempoPattern);
+      }, 500*tempoPattern));
       break;
   }
 }
@@ -74,18 +87,36 @@ $(document).ready(function(){
       powerOff = true;
       $("#display-content").html("");
       reset();
-      console.log();
     }
   });
 
 
     $("#start-button").click(function(event){
+      // console.log("In start button function 1");
       if(!powerOff) {
+        // console.log("In start button function 2");
+
+        // if power off during lights up, turn off lights
+        $("#green-block").removeClass("green-light-up");
+        $("#red-block").removeClass("red-light-up");
+        $("#yellow-block").removeClass("yellow-light-up");
+        $("#blue-block").removeClass("blue-light-up");
+
+        for (var i = 0; i < timeOuts.length; i++) {
+          clearTimeout(timeOuts[i]);
+          // console.log("clearing timeout!");
+        }
+
         gamePattern = [];
         level = 0;
         clickingFlag = false;
         expectClickIndex = 0;
+        tempoPattern = 1;
+        timeOuts = [];
 
+
+
+        // Display animation
         timeOuts.push(setTimeout(function(){
           $("#display-content").html("");
         },200));
@@ -196,7 +227,25 @@ $(document).ready(function(){
 });
 
 var playEntirePattern = function(){
+  // For cheating test
   // console.log("gamePattern: ",gamePattern);
+  // for(var i = 0; i < gamePattern.length; i ++) {
+  //   console.log(i);
+  //   switch (gamePattern[i]) {
+  //     case 0:
+  //       console.log("Green");
+  //       break;
+  //     case 1:
+  //       console.log("Red");
+  //       break;
+  //     case 2:
+  //       console.log("Yellow");
+  //       break;
+  //     case 3:
+  //       console.log("Blue");
+  //       break;
+  //   }
+  // }
   var playTime = 0;
   gamePattern.forEach(function(item, index, array){
       timeOuts.push(setTimeout(function(){
@@ -206,9 +255,9 @@ var playEntirePattern = function(){
           timeOut = setTimeout(function(){
             clickingFlag = true;
             $(".light-block").addClass("activated");
-          }, 1500);
+          }, 600+900*tempoPattern);
         }
-      }, (index+1)*1500));
+      }, (index+1)*(600+900*tempoPattern) ));
   });
 }
 
@@ -219,8 +268,8 @@ var display = function() {
   } else {
     displayLevel = Math.floor(level/10) + " " + (level - Math.floor(level/10)*10) + " ";
   }
-  console.log("level: ",level);
-  console.log("displayLevel: ",displayLevel);
+  // console.log("level: ",level);
+  // console.log("displayLevel: ",displayLevel);
   $("#display-content").html(displayLevel);
   // $("#display-content").animate({
   //   html(displayLevel);
@@ -253,11 +302,20 @@ var reset = function(){
   powerOff = true;
   strictMode = false;
   clickingFlag = false;
+
+  tempoPattern = 1;
   $(".light-block").removeClass("activated");
   expectClickIndex = 0;
 
+  // if power off during lights up, turn off lights
+  $("#green-block").removeClass("green-light-up");
+  $("#red-block").removeClass("red-light-up");
+  $("#yellow-block").removeClass("yellow-light-up");
+  $("#blue-block").removeClass("blue-light-up");
+
   for (var i = 0; i < timeOuts.length; i++) {
     clearTimeout(timeOuts[i]);
+    // console.log("clearing timeout!");
   }
 
   timeOuts = [];
