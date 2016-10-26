@@ -1,6 +1,6 @@
 # Simon-Game
 
-This is a **JavaScript & Sass** project for [Free Code Camp challenge](https://www.freecodecamp.com/challenges/build-a-simon-game)
+This is a **JavaScript & Sass** project for [Free Code Camp challenge](https://www.freecodecamp.com/challenges/build-a-simon-game). Also applied **normalize.css，Bourbon Mixins， HTML5 animations**.
 
 You can [view the site here](http://codepen.io/AsimoLoveGym/full/zKXYKk/)
 
@@ -27,13 +27,10 @@ Tempo will speed up after level 5, 9 and 13.
 ## Reference:
 
 Mainly inspired by (just reverse engineering, never looked into the code)
-
 https://codepen.io/Em-Ant/full/QbRyqq/
 
 Clear All timeout, inspired by stackoverflow questions
-
 http://stackoverflow.com/questions/3847121/how-can-i-disable-all-settimeout-events
 
 Bourbon.sass for cross browsers compatibility
-
 https://github.com/thoughtbot/bourbon
