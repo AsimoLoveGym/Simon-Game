@@ -1,8 +1,8 @@
 # Simon-Game
 
-This is a **JavaScript & Sass** project for [Free Code Camp challenge](https://www.freecodecamp.com/challenges/build-a-simon-game). Also applied **normalize.css，Bourbon Mixins， HTML5 animations**.
+Classical 1980s Simon game with two play modes and selectable difficulty. This is a **JavaScript & Sass** project for [Free Code Camp challenge](https://www.freecodecamp.com/challenges/build-a-simon-game). Also applied **normalize.css，Bourbon Mixins， CSS animations and flexbox**.
 
-You can [view the site here](http://codepen.io/AsimoLoveGym/full/zKXYKk/)
+[Start Game](http://codepen.io/AsimoLoveGym/full/zKXYKk/)
 
 ## Game Rules:
 
